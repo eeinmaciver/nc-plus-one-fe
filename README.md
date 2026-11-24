@@ -1,75 +1,37 @@
-# React + TypeScript + Vite
+# NC PLUS ONE FRONT END
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React/TypeScript project is a front end to my prevous back end API. It will allow a user or organiser to interact with the API from a browser and do things like view events, create a profile and RSVP.
 
-Currently, two official plugins are available:
+## Status 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Right now I have established a connection between the front end/browser and the back end/API. I have also fetched a token and made an authenticated request.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Typescript
+- Vite
+- vitest
 
-## Expanding the ESLint configuration
+## Back End Repo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+https://github.com/eeinmaciver/nc_plus_one
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+npm install
+npm i react-router
+npm install -D vitest jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom
 
-```
+### Running Locally
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+In a seperate terminal type the command: npm run dev
+This will begin the server at the address: http://localhost:5173/
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Connecting to the API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The approach I went with for connecting the front end to the back end was CORS on the API. This is because I wanted to make sure that both repos were able to communicate with each other rather than relying on a proxy.
 
-```
+### Features
