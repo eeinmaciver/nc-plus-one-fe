@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getEvents } from "../api"
 import type { EventItem } from "../types"
+import EventCard from "../components/EventCard";
 
 export default function EventsPage() {
     const [events, setEvents] = useState<EventItem[]>([]);
@@ -28,7 +29,7 @@ export default function EventsPage() {
         <section>
             <h1>Events</h1>
             <ul>
-                {events.map((event) => (<li key={event.event_id}>{event.title}</li>))}
+                {events.map((event) => (<EventCard key={event.event_id} event={event} />))}
             </ul>
         </section>
         );
