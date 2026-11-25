@@ -2,6 +2,7 @@ import { describe, test, expect } from "vitest";
 import { render, screen} from "@testing-library/react";
 import EventCard from "./EventCard";
 import type { EventItem } from "../types";
+import { MemoryRouter } from "react-router";
 
 const testEvent: EventItem = {
     event_id: 1,
@@ -16,7 +17,7 @@ const testEvent: EventItem = {
 
 describe("EventCard", () => {
     test("shows event title as heading", () => {
-        render(<ul><EventCard event={testEvent} /></ul>);
+        render(<MemoryRouter><ul><EventCard event={testEvent} /></ul></MemoryRouter>);
 
         expect(
             screen.getByRole("heading", { name: "Counter-Strike 2 LAN Party"})
@@ -24,7 +25,7 @@ describe("EventCard", () => {
     });
 
     test("start time is formatted properly", () => {
-        render(<ul><EventCard event={testEvent} /></ul>);
+        render(<MemoryRouter><ul><EventCard event={testEvent} /></ul></MemoryRouter>);
 
         expect(
             screen.getByText("Sun 20 Dec, 17:00")
@@ -32,7 +33,7 @@ describe("EventCard", () => {
     });
 
     test("missing description", () => {
-        render(<ul><EventCard event={testEvent} /></ul>);
+        render(<MemoryRouter><ul><EventCard event={testEvent} /></ul></MemoryRouter>);
 
         expect(
             screen.getByText("Event description not available.")

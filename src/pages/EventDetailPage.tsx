@@ -25,22 +25,22 @@ export default function EventDetailPage() {
             });
     }, [event_id]);
 
-    if (isLoading) return <p>Loading events...</p>;
+    if (isLoading) return <p>Loading event...</p>;
     if (error) return <p>Error: {error}</p>;
     if (!event) return null;
 
     return (
-        <section>
+        <article>
             <h1>{event.title}</h1>
             <ul>
-                <li>{event.description}</li>
+                <li>{event.description ?? "No description available."}</li>
                 <li>Start time: <time dateTime={event.starts_at}>{formatDate(event.starts_at)}</time></li>
                 <li>End time: <time dateTime={event.starts_at}>{formatDate(event.ends_at)}</time></li>
-                <li>Venue: {event.venue_name}</li>
-                <li>Address {event.address}</li>
-                <li>Capacity: {event.capacity}</li>
+                <li>Venue: {event.venue_name ?? "n/a"}</li>
+                <li>Address: {event.address ?? "n/a"}</li>
+                <li>Capacity: {event.capacity  ?? "n/a"}</li>
             </ul>
-        </section>
+        </article>
         );
 }
 

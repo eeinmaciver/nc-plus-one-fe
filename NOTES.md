@@ -52,3 +52,5 @@ fetch("http://localhost:8000/api/user/me/events", {
     - empty state
     - loading state
 
+  - EventDetailPage
+
