@@ -19,8 +19,11 @@ git commit -m “...”
 git push origin main
 
 # Servers
-npm run dev
-uvicorn main:app --reload
+FE: npm run dev
+BE: uvicorn main:app --reload
+
+# Tests
+npm test (running in seperate terminal)
 
 # Check Browser is connected to API
 fetch("http://localhost:8000/api/events").then(r => r.json()).then(console.log)
@@ -38,3 +41,14 @@ console.log(token);
 fetch("http://localhost:8000/api/user/me/events", {
   headers: { Authorization: `Bearer ${token}` },
 }).then(r => r.json()).then(console.log);
+
+# To Do
+- Improve UX/CSS
+- Refactor start/end times
+
+- Tests
+  - EventsPage
+    - error state
+    - empty state
+    - loading state
+

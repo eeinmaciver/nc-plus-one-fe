@@ -1,4 +1,5 @@
 import type { EventsList } from "./types";
+import type { EventDetailResponse } from "./types";
 
 const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api";
 
@@ -19,4 +20,8 @@ export async function apiFetch<T>(path: string): Promise<T> {
 
 export function getEvents() {
     return apiFetch<EventsList>("/events")
+}
+
+export function getEventId(id: string) {
+    return apiFetch<EventDetailResponse>(`/events/${id}`)
 }
