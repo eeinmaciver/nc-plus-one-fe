@@ -18,5 +18,5 @@ export interface EventItem {
 };
 
 export interface EventsList {
-    events: Event[];
+    events: EventItem[];
 }
