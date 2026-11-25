@@ -4,6 +4,7 @@ import type { EventItem } from "../types";
 import { getEvents } from "../api"
 import EventsPage from "./EventsPage";
 import { vi } from "vitest";
+import { MemoryRouter } from "react-router";
 
 vi.mock("../api");
 
@@ -23,7 +24,7 @@ const testEvent: EventItem = {
 describe("EventsPage", () => {
     test("displays event card when loaded", async () => {
         mockEvents.mockResolvedValue({ events: [testEvent] });
-        render(<EventsPage/>);
+        render(<MemoryRouter><EventsPage/></MemoryRouter>);
         expect(await screen.findByRole("heading", { name: "Counter-Strike 2 LAN Party"})).toBeInTheDocument();
     });
 });
