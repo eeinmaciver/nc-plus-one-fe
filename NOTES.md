@@ -32,7 +32,7 @@ fetch("http://localhost:8000/api/events").then(r => r.json()).then(console.log)
 const res = await fetch("http://localhost:8000/api/auth/login", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ email: "alice@example.com", password: "password123" }),
+  body: JSON.stringify({ email: "EMAIL FROM BACK END DATA", password: "PASSWORD FROM BACK DATA" }),
 });
 const { token } = await res.json();
 console.log(token);
