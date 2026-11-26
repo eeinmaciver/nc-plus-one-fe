@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getEvents } from "../../api"
 import type { EventItem } from "../../types"
 import EventCard from "../../components/EventCard/EventCard";
+import { login } from "../../api";
 
 export default function EventsPage() {
     const [events, setEvents] = useState<EventItem[]>([]);
@@ -9,6 +10,7 @@ export default function EventsPage() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        login("alice@example.com", "password123").then(console.log).catch(console.error);
         getEvents()
             .then((data) => {
                 setEvents(data.events);

@@ -36,3 +36,7 @@ export interface EventDetail {
 export interface EventDetailResponse {
     event: EventDetail;
 };
+
+export interface LoginResponse {
+    token: string;
+}

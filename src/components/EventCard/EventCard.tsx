@@ -19,4 +19,4 @@ export default function EventCard({ event }: EventCardProps) {
     );
 }
 
-            // <p><time dateTime={event.ends_at}>{formatDate(event.ends_at)}</time></p>
+// <p><time dateTime={event.ends_at}>{formatDate(event.ends_at)}</time></p>

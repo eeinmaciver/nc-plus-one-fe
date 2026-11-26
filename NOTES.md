@@ -42,6 +42,10 @@ fetch("http://localhost:8000/api/user/me/events", {
   headers: { Authorization: `Bearer ${token}` },
 }).then(r => r.json()).then(console.log);
 
+# Debugs
+- pages not opening in new tabs because the server wasn't running due to and import typo
+-
+
 # To Do
 - Improve UX/CSS
 - Refactor start/end times
@@ -53,4 +57,5 @@ fetch("http://localhost:8000/api/user/me/events", {
     - loading state
 
   - EventDetailPage
+  - apiFetch
 

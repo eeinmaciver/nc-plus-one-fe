@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import Layout from "./components/Layout";
-import EventsPage from "./pages/EventsPage";
+import EventsPage from "./pages/EventsPage/EventsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import EventDetailPage from "./pages/EventDetailPage";
 

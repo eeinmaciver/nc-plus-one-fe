@@ -4,7 +4,7 @@ This React/TypeScript project is a front end to my prevous back end API. It will
 
 ## Status 
 
-Right now I have established a connection between the front end/browser and the back end/API. I have also fetched a token and made an authenticated request.
+I have built the Events page, also each event has it's own address and is linked through the event title. I am currently working on the Auth section of the site where users and organisers can login and create/edit events and rsvp to event(s).
 
 ## Tech Stack
 
