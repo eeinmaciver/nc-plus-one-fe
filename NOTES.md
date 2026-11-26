@@ -47,6 +47,24 @@ fetch("http://localhost:8000/api/user/me/events", {
 -
 
 # To Do
+Auth
+- Login form(error message)
+- Register form (error message)
+- UI shows signed in user
+- Redirect signed out users to login page
+- 401 rejected token signs out user
+RSVP
+- Signed in user can RSVP an event (button)
+- My events page
+Organising events
+- Signed in user can create event
+- Organiser (event creator) can edit event
+Screens
+- loading state while data is fetched
+- error state when request fails
+- empty state
+- layout for mobile and desktop
+
 - Improve UX/CSS
 - Refactor start/end times
 
