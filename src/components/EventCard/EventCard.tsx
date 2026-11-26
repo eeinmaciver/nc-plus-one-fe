@@ -1,5 +1,5 @@
-import type { EventItem } from "../types";
-import { formatDate } from "../formatDate";
+import type { EventItem } from "../../types";
+import { formatDate } from "../../formatDate";
 import { Link } from "react-router";
 
 interface EventCardProps {

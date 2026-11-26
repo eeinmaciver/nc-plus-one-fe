@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { getEvents } from "../api"
-import type { EventItem } from "../types"
-import EventCard from "../components/EventCard";
+import { getEvents } from "../../api"
+import type { EventItem } from "../../types"
+import EventCard from "../../components/EventCard/EventCard";
 
 export default function EventsPage() {
     const [events, setEvents] = useState<EventItem[]>([]);

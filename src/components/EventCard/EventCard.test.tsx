@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { render, screen} from "@testing-library/react";
-import EventCard from "./EventCard";
-import type { EventItem } from "../types";
+import EventCard from "././EventCard";
+import type { EventItem } from "../../types";
 import { MemoryRouter } from "react-router";
 
 const testEvent: EventItem = {

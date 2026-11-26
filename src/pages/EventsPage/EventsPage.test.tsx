@@ -1,12 +1,12 @@
 import { describe, test, expect } from "vitest";
 import { render, screen} from "@testing-library/react";
-import type { EventItem } from "../types";
-import { getEvents } from "../api"
+import type { EventItem } from "../../types";
+import { getEvents } from "../../api";
 import EventsPage from "./EventsPage";
 import { vi } from "vitest";
 import { MemoryRouter } from "react-router";
 
-vi.mock("../api");
+vi.mock("../../api");
 
 const mockEvents = vi.mocked(getEvents);
 
