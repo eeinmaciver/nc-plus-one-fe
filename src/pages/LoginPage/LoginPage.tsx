@@ -30,26 +30,29 @@ export default function LoginPage () {
 
     return (
         <section>
-            <h2>Sign In</h2>
+            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor={email}>Email: </label>
+                <label htmlFor="html">Email: </label>
                 <input id="email"
                 type="email" 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)}
+                required
+                autoComplete="email"
                 />
                 <br></br>
-                <label htmlFor={password}>Password: </label>
+                <label htmlFor="password">Password: </label>
                 <input id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
                 />
                 <br></br>
-                <button type="submit" disabled={isSubmitting}>Login</button>
+                <button type="submit" disabled={isSubmitting}>{isSubmitting ? "Logging in..." : "Login"}</button>
             </form>
             {error && <p role="alert">{error}</p>}
         </section>
     );
-
 }

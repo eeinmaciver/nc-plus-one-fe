@@ -6,7 +6,7 @@ import { useAuth } from "../hooks/useAuth";
 
 export default function Layout() {
 
-    const { isLoggedIn, login, logout} = useAuth();
+    const { isLoggedIn, logout} = useAuth();
     
     return (
         <>
