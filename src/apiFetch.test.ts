@@ -40,12 +40,20 @@ describe("apiFetch", () => {
         expect(init?.method).toBe("GET");
         expect(init?.headers).toEqual({});
         expect(init?.body).toBe(undefined);
-});
+    });
 
     test("throws error when response is not ok", async () => {
         vi.spyOn(globalThis, "fetch").mockResolvedValue(
-            new Response(JSON.stringify({ ok: false }), { status: 404 })
-        )
+            new Response(JSON.stringify({ error: "Event not found" }), { status: 404 })
+        );
+        await expect(apiFetch("/events/999")).rejects.toThrow("Event not found");
+    });
+
+    test("return undefined for 204 response", async () => {
+        vi.spyOn(globalThis, "fetch").mockResolvedValue(
+            new Response(null, { status: 204 })
+        );
+        await expect(apiFetch("/events/1/rsvp/me", { method: "DELETE"})).resolves.toBe(undefined);
     });
 
 });
