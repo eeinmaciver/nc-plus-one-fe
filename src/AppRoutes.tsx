@@ -5,6 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import EventDetailPage from "./pages/EventDetailPage/EventDetailPage";
 import HomePage from "./pages/Homepage/Homepage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 export default function AppRoutes() {
 
@@ -15,9 +16,9 @@ export default function AppRoutes() {
                 <Route path="events" element={<EventsPage/>}/>
                 <Route path="events/:event_id" element={<EventDetailPage/>}/>
                 <Route path="login" element={<LoginPage/>} />
+                <Route path="register" element={<RegisterPage/>} />
                 <Route path="*" element={<NotFoundPage/>} />
             </Route>
         </Routes>
     )
-
 }

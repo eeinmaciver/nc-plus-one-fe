@@ -17,7 +17,11 @@ export default function Layout() {
                     <NavLink to="/events">Events</NavLink>
                     &nbsp;
                     {isLoggedIn ? (<button onClick={logout}>Log out</button>
-                ) : (<NavLink to="/login">Login</NavLink>)}
+                ) : (<>
+                <NavLink to="/login">Login</NavLink>
+                &nbsp;
+                <NavLink to="/register">Register</NavLink>
+                </>)}
                 </nav>
             </header>
             <main>

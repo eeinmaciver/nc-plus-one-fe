@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { AuthContext } from "./AuthContext";
-import { login as apiLogin } from "../api";
+import { login as apiLogin, register as apiRegister } from "../api";
 
 const TOKEN_KEY = "token";
 
@@ -20,8 +20,13 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         setToken(null);
     }
 
+    async function register(name: string, email: string, password: string) {
+        await apiRegister(name, email, password);
+        await login(email, password);
+    }
+
     return (
-        <AuthContext value={{ token, isLoggedIn: token !== null, login, logout }}>
+        <AuthContext value={{ token, isLoggedIn: token !== null, login, logout, register }}>
             {children}
         </AuthContext>
     );

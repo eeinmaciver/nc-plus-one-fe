@@ -1,6 +1,6 @@
-import type { LoginResponse, EventsList, EventDetailResponse } from "./types";
+import { type LoginResponse, type EventsList, type EventDetailResponse, type RegisterResponse,  } from "./types";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api";
 
 interface ApiMethods {
     method?: "GET" | "POST" | "PATCH" | "DELETE";
@@ -40,4 +40,8 @@ export function getEventId(id: string) {
 
 export function login(email: string, password: string) {
     return apiFetch<LoginResponse>("/auth/login", {method: "POST", body: { email, password },});
+}
+
+export function register(name: string, email: string, password: string) {
+    return apiFetch<RegisterResponse>("/auth/register", {method: "POST", body: { name, email, password }});
 }

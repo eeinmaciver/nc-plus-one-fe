@@ -18,6 +18,7 @@ function renderLogin() {
         isLoggedIn: false,
         login: mockLogin,
         logout: vi.fn(),
+        register: vi.fn(),
     };
 
     render(

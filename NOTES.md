@@ -48,7 +48,9 @@ fetch("http://localhost:8000/api/user/me/events", {
 
 # To Do
 Auth
-- Register form (error message)
+- Register
+  - Min length for passwords
+  - Confirm password
 - UI shows signed in user
 - Redirect signed out users to login page
 - 401 rejected token signs out user
