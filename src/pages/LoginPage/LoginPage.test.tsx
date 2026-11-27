@@ -57,4 +57,29 @@ describe("LoginPage", () => {
         expect(mockLogin).toHaveBeenCalledWith("alice@example.com", "password123");
         expect(await screen.findByText("Events")).toBeInTheDocument();
     });
+
+    test("incorrect password displays error", async () => {
+        const user = userEvent.setup();
+        mockLogin.mockRejectedValue(new Error("Email not found or password incorrect"));
+        renderLogin();
+
+        await user.type(screen.getByLabelText(/email/i), "alice@example.com");
+        await user.type(screen.getByLabelText(/password/i), "wrongpassword123");
+        await user.click(screen.getByRole("button", { name: /login/i }));
+
+        expect(await screen.findByRole("alert")).toHaveTextContent("Email not found or password incorrect");
+    });
+
+    test("incorrect password displays error", async () => {
+        const user = userEvent.setup();
+        mockLogin.mockReturnValue(new Promise (() => {}));
+        renderLogin();
+
+        await user.type(screen.getByLabelText(/email/i), "alice@example.com");
+        await user.type(screen.getByLabelText(/password/i), "wrongpassword123");
+        await user.click(screen.getByRole("button", { name: /login/i }));
+
+        expect(await screen.findByRole("button", { name: /logging in/i})).toBeDisabled();
+    });
+
 })

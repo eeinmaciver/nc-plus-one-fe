@@ -19,8 +19,8 @@ git commit -m “...”
 git push origin main
 
 # Servers
-FE: npm run dev
-BE: uvicorn main:app --reload
+Front End: npm run dev
+Back End: uvicorn main:app --reload
 
 # Tests
 npm test (running in seperate terminal)
@@ -48,7 +48,6 @@ fetch("http://localhost:8000/api/user/me/events", {
 
 # To Do
 Auth
-- Login form(error message)
 - Register form (error message)
 - UI shows signed in user
 - Redirect signed out users to login page
@@ -73,7 +72,5 @@ Screens
     - error state
     - empty state
     - loading state
-
   - EventDetailPage
-  - apiFetch
 
