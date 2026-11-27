@@ -22,5 +22,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "formatDate/formatDate.test.ts", "formatDate/formatDate.ts"]
 }

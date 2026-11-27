@@ -32,7 +32,7 @@ export default function LoginPage () {
         <section>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="html">Email: </label>
+                <label htmlFor="email">Email: </label>
                 <input id="email"
                 type="email" 
                 value={email} 

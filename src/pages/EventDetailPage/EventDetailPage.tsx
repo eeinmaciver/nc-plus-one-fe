@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { getEventId } from "../api"
-import type { EventDetail } from "../types"
+import { getEventId } from "../../api";
+import type { EventDetail } from "../../types";
 import { useParams } from "react-router";
-import { formatDate } from "../formatDate";
+import { formatDate } from "../../../formatDate/formatDate";
 
 export default function EventDetailPage() {
     const [event, setEvent] = useState<EventDetail | null>(null);

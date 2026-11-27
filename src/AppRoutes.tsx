@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router";
 import Layout from "./components/Layout";
 import EventsPage from "./pages/EventsPage/EventsPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import EventDetailPage from "./pages/EventDetailPage";
-import HomePage from "./pages/Homepage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import EventDetailPage from "./pages/EventDetailPage/EventDetailPage";
+import HomePage from "./pages/Homepage/Homepage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 
 export default function AppRoutes() {
